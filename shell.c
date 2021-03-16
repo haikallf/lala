@@ -21,7 +21,7 @@ int div(int bil, int bag) {
         bilc -= bag;
     }
     return c;
-}
+
 
 // Mengosongkan isi buffer (mengisi dengan 0x00)
 void clear(char *buffer, int length) {
