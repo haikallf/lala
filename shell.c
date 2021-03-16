@@ -1,43 +1,21 @@
+void handleInterrupt21(int AX, int BX, int CX, int DX);
+void printChar(char *character); // print satu character
+void printString(char *string); // print satu string dengan newline
+void printS(char *string); // print satu string tanpa newline
+void printLen(char *string, int length); // print dengan maksimum length
+void printNewLine();
+void carriageLine();
+void printyoos();
+void printStringColored(char *string, int line, int color);
+void printyoosColored();
+void readString(char *string);
+void readSector(char *buffer, int sector);
+void writeSector(char *buffer, int sector);
+void writeFile(char *buffer, char *path, int *sectors, char parentIndex);
+void readFile(char *buffer, char *path, int *result, char parentIndex);
+void clear(char *buffer, int length); // Fungsi untuk mengisi buffer dengan 0
 int mod(int bil, int bag);
 int div(int bil, int bag);
-void clear(char *buffer, int length);
-void copyStr(char *from, char *to);
-
-// Implementasi Modulo
-int mod(int bil, int bag) {
-    int bilc = bil;
-    while (bilc >= bag) {
-        bilc -= bag;
-    }
-    return bilc;
-}
-
-// Implementasi Div
-int div(int bil, int bag) {
-    int bilc = bil;
-    int c = 0;
-    while (bilc >= bag) {
-        c++;
-        bilc -= bag;
-    }
-    return c;
-}
-
-// Mengosongkan isi buffer (mengisi dengan 0x00)
-void clear(char *buffer, int length) {
-	int i = 0;
-	while (i < length) {
-		// isi buffer[i] (seluruh isi buffer) dengan 0
-		buffer[i] = 0x00;
-		i++;
-	}
-}
-
-void copyStr(char *from, char *to) {
-	int i = 0;
-	while (from[i] != 0x00) {
-		to[i] = from[i];
-		i++;
-	}
-	to[i] = 0x00;
-}
+int strlen(char* str);
+int strcmp(char* str1, char* str2);
+int idxP(char* path, int parentIndex, int *type);
